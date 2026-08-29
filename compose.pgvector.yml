@@ -1,0 +1,31 @@
+name: agentdesk-pgvector
+
+# Isolated PostgreSQL used for local migration/benchmarking.  It is deliberately
+# separate from the Evolution API database; do not point AgentDesk at the
+# Evolution database because its schema and extension set are unrelated.
+services:
+  postgres:
+    image: agentdesk-pgvector:pg18
+    build:
+      context: ./infra/pgvector
+      dockerfile: Dockerfile
+    environment:
+      POSTGRES_DB: ${AGENTDESK_PGVECTOR_DB:-agentdesk}
+      POSTGRES_USER: ${AGENTDESK_PGVECTOR_USER:-agentdesk}
+      # Local benchmark default only; always override this for a shared host.
+      POSTGRES_PASSWORD: ${AGENTDESK_PGVECTOR_PASSWORD:-agentdesk-local-only}
+    ports:
+      - "${AGENTDESK_PGVECTOR_PORT:-55432}:5432"
+    volumes:
+      # PostgreSQL 18 uses a major-version subdirectory under this mount.
+      - agentdesk-pgvector-data:/var/lib/postgresql
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready -U "$${POSTGRES_USER}" -d "$${POSTGRES_DB}"
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+volumes:
+  agentdesk-pgvector-data:

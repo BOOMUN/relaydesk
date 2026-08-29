@@ -1,0 +1,23 @@
+{
+  "name": "agentdesk-frontend",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node ./node_modules/vite/bin/vite.js",
+    "build": "node ./node_modules/vue-tsc/bin/vue-tsc.js -b && node ./node_modules/vite/bin/vite.js build",
+    "preview": "node ./node_modules/vite/bin/vite.js preview"
+  },
+  "dependencies": {
+    "@lucide/vue": "1.33.0",
+    "vue": "^3.5.0"
+  },
+  "devDependencies": {
+    "@esbuild/win32-x64": "0.28.2",
+    "@rollup/rollup-win32-x64-msvc": "4.62.5",
+    "@vitejs/plugin-vue": "^6.0.0",
+    "typescript": "^5.9.0",
+    "vite": "7.3.6",
+    "vue-tsc": "^3.0.0"
+  }
+}

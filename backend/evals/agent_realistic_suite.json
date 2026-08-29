@@ -1,0 +1,51 @@
+{
+  "version": "2026-08-28.1",
+  "description": "真实客户问题端到端回归集；不直接修改订单或发送外部消息。",
+  "cases": [
+    {"id":"price-01","category":"price","query":"去日本租 5G WiFi 5 天要多少钱？","expected_route":"pricing","expected_language":"zh-CN","expected_handoff":false},
+    {"id":"price-02","category":"price","query":"从 9 月 3 日到 9 月 10 日去韩国，WiFi 蛋多少钱？","expected_route":"pricing","expected_language":"zh-CN","expected_handoff":false},
+    {"id":"price-03","category":"price","query":"How much is a Japan eSIM for 7 days?","expected_route":"pricing","expected_language":"en","expected_handoff":false},
+    {"id":"price-04","category":"price","query":"How much for two WiFi devices in Thailand for 4 days?","expected_route":"pricing","expected_language":"en","expected_handoff":false},
+    {"id":"price-05","category":"price","query":"请问租三天要多少钱？","expected_route":"pricing","expected_language":"zh-CN","expected_handoff":false},
+    {"id":"price-06","category":"price","query":"How much? I mean the Korea WiFi device.","expected_route":"pricing","expected_language":"en","expected_handoff":false},
+    {"id":"price-07","category":"price","query":"由 10/12 到 10/18 取还机要多少钱（实际以网址结算为准）？","expected_route":"pricing","expected_language":"zh-CN","expected_handoff":false},
+    {"id":"price-08","category":"price","query":"请发日本和台湾的完整价目表","expected_route":"pricing","expected_language":"zh-CN","expected_handoff":false},
+
+    {"id":"refund-01","category":"refund","query":"我要退款","expected_route":"handoff","expected_language":"zh-CN","expected_handoff":true},
+    {"id":"refund-02","category":"refund","query":"I want a refund for my rental.","expected_route":"handoff","expected_language":"en","expected_handoff":true},
+    {"id":"refund-03","category":"refund","query":"可以帮我取消订单 ORD-1001 吗？","expected_route":"handoff","expected_language":"zh-CN","expected_handoff":true},
+    {"id":"refund-04","category":"refund","query":"Please change the delivery address on ORD-1001.","expected_route":"handoff","expected_language":"en","expected_handoff":true},
+    {"id":"refund-05","category":"refund","query":"按金几时可以退回？","expected_route":"handoff","expected_language":"zh-CN","expected_handoff":true},
+    {"id":"refund-06","category":"refund","query":"I was charged twice, please investigate and refund me.","expected_route":"handoff","expected_language":"en","expected_handoff":true},
+
+    {"id":"pickup-01","category":"pickup_return","query":"香港机场哪里领取和归还 WiFi 蛋？","expected_route":"knowledge","expected_language":"zh-CN","expected_handoff":false},
+    {"id":"pickup-02","category":"pickup_return","query":"Where do I pick up the device at Hong Kong airport?","expected_route":"knowledge","expected_language":"en","expected_handoff":false},
+    {"id":"pickup-03","category":"pickup_return","query":"可以在门市取机，之后邮寄归还吗？","expected_route":"knowledge","expected_language":"zh-CN","expected_handoff":false},
+    {"id":"pickup-04","category":"pickup_return","query":"Can someone else collect my WiFi device?","expected_route":"knowledge","expected_language":"en","expected_handoff":false},
+    {"id":"pickup-05","category":"pickup_return","query":"机场柜台几点关门？","expected_route":"knowledge","expected_language":"zh-CN","expected_handoff":false},
+    {"id":"pickup-06","category":"pickup_return","query":"If my flight is delayed, how should I arrange pickup?","expected_route":"knowledge","expected_language":"en","expected_handoff":false},
+    {"id":"pickup-07","category":"pickup_return","query":"还机晚一天会怎样？","expected_route":"knowledge","expected_language":"zh-CN","expected_handoff":false},
+
+    {"id":"fault-01","category":"fault","query":"WiFi 蛋无法开机怎么办？","expected_route":"knowledge","expected_language":"zh-CN","expected_handoff":false},
+    {"id":"fault-02","category":"fault","query":"My eSIM shows no service after installation.","expected_route":"knowledge","expected_language":"en","expected_handoff":false},
+    {"id":"fault-03","category":"fault","query":"连接不到网络，已经重启两次了","expected_route":"knowledge","expected_language":"zh-CN","expected_handoff":false},
+    {"id":"fault-04","category":"fault","query":"The battery drains very quickly. What can I do?","expected_route":"knowledge","expected_language":"en","expected_handoff":false},
+    {"id":"fault-05","category":"fault","query":"手机显示 SIM 卡无效，如何处理？","expected_route":"knowledge","expected_language":"zh-CN","expected_handoff":false},
+    {"id":"fault-06","category":"fault","query":"My rental device was lost during the trip.","expected_route":"handoff","expected_language":"en","expected_handoff":true},
+    {"id":"fault-07","category":"fault","query":"设备坏了，想换一部新的","expected_route":"handoff","expected_language":"zh-CN","expected_handoff":true},
+
+    {"id":"noanswer-01","category":"no_answer","query":"东京今天会不会下雨？","expected_route":"handoff","expected_language":"zh-CN","expected_handoff":true},
+    {"id":"noanswer-02","category":"no_answer","query":"Recommend a restaurant in Tsim Sha Tsui.","expected_route":"handoff","expected_language":"en","expected_handoff":true},
+    {"id":"noanswer-03","category":"no_answer","query":"你们有卖单反相机吗？","expected_route":"handoff","expected_language":"zh-CN","expected_handoff":true},
+    {"id":"noanswer-04","category":"no_answer","query":"What is the Bitcoin price today?","expected_route":"handoff","expected_language":"en","expected_handoff":true},
+    {"id":"noanswer-05","category":"no_answer","query":"这个可以吗？","expected_route":"knowledge","expected_language":"zh-CN","expected_handoff":false},
+    {"id":"noanswer-06","category":"no_answer","query":"Which one is best?","expected_route":"knowledge","expected_language":"en","expected_handoff":false},
+
+    {"id":"multi-01","category":"multilingual","query":"去 Japan 租哪个比较好？","expected_route":"knowledge","expected_language":"zh-CN","expected_handoff":false},
+    {"id":"multi-02","category":"multilingual","query":"去日本租 WiFi，How much for 5 days?","expected_route":"pricing","expected_language":"zh-CN","expected_handoff":false},
+    {"id":"multi-03","category":"multilingual","query":"Can I pick up in 香港机场?","expected_route":"knowledge","expected_language":"en","expected_handoff":false},
+    {"id":"multi-04","category":"multilingual","query":"請問 Japan eSIM supports iPhone 嗎？","expected_route":"knowledge","expected_language":"zh-TW","expected_handoff":false},
+    {"id":"multi-05","category":"multilingual","query":"VIP送哪些 product？","expected_route":"knowledge","expected_language":"zh-CN","expected_handoff":false},
+    {"id":"multi-06","category":"multilingual","query":"I need 人工客服 now.","expected_route":"handoff","expected_language":"en","expected_handoff":true}
+  ]
+}
